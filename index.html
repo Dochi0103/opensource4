@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>basic :: Table CSS</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap">
+<style>
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl, dd {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-size: 16px;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+}
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+table, th, td{
+	border: 1px solid #e1e1e1;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Noto Sans KR", sans-serif;
+	font-size: 1em;
+}
+input[type=text] {
+	padding: 9px 10px;
+	height: 40px;
+	vertical-align: middle;
+	font-family: "Noto Sans KR", sans-serif;
+	font-size: 0.813em;
+	border: 1px solid #bebebe;
+	box-sizing: border-box;
+}
+.mytbl {
+	margin: 0 auto;
+	max-width: 1020px;
+}
+.mytbl .maintitle{
+	font-size: 2em;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+.mytbl .top{
+	padding-left: 10px;
+	padding-right: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid  #e1e1e1;
+	margin-bottom: 20px;
+}
+.mytbl .top span{
+	color: #ff0000;
+}
+.mytbl .top p{
+	font-size: 0.875em;
+	font-weight: 500;
+}
+.mytbl .search {
+	padding: 20px 0 25px;
+	text-align: right;
+}
+.mytbl .search input[type=text]:first-child {
+	width: 100px;
+	vertical-align: middle;
+}
+.mytbl .search input[type=text] {
+	width: 200px;
+	vertical-align: middle;
+}
+
+.mytbl .search input[type=image] {
+	display: inline-block;
+	padding: 11px 15px;
+	vertical-align: middle;
+	background-color: #595959;
+	background-size: 40px 40px;
+}
+
+.mytbl table th{
+	padding: 11px 0;
+	font-weight: 300;
+	background-color: #f6f6f6;
+	color: #5b5b5b;
+	border-left: 1px solid #fff;
+	border-top: 2px solid #595959;
+	border-bottom: 1px solid #5b5b5b;
+	font-size: 1rem;
+	font-weight: 400;
+}
+.mytbl table th:last-child{
+	border-right: 1px solid #fff;
+}
+.mytbl table th.title{
+	font-size: 1rem;
+	font-weight: 400;
+}
+.mytbl table td{
+	padding: 15px 0;
+	text-align: center;
+	font-size: 0.875em;
+	color: #595959;
+	border-left: 1px solid #fff;
+}
+.mytbl table td:last-child{
+	border-right: 1px solid #fff;
+}
+.mytbl table td.num{
+	width: 68px;
+}
+.mytbl table td.team{
+	width: 88px;
+}
+.mytbl table td.date{
+	width: 100px;
+}
+.mytbl table td.check{
+	width: 68px;
+}
+.mytbl table td.attach{
+	width: 68px;
+}
+.mytbl table td.attach a{
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	overflow: hidden;
+	text-indent: -9999px;
+	background: url(images/sprite2.png) no-repeat;
+}
+.mytbl table td.attach a.download {
+	background-position: 0 -240px;
+}
+.mytbl table td.attach a.photo{
+	background-position: 0 -80px;
+}
+.mytbl table td.attacht a.img{
+	background-position: 0 -160px;
+}
+.mytbl table td.attach a.pdf{
+	background-position: 0 -120px;
+}
+.mytbl table td.title{
+	position: relative;
+	text-align: left;
+	padding-left: 5px;
+	font-size: 0.875rem;
+	font-weight: 400;
+}
+.mytbl table td.title a{
+	position: absolute;
+	top: 24px;
+	width: 90%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #595959;
+	text-indent: 10px;
+}
+.pagination{
+	margin-top: 50px;
+	text-align: center;
+}
+.pagination >div,
+.pagination ul,
+.pagination ul li{
+	display: inline-block;
+	vertical-align: middle;
+}
+.pagination ul li a {
+	display: inline-block;
+	padding: 3px 10px;
+	text-decoration: none;
+	font-size: 1em;
+	color: #5a5a5a;
+	border: 1px solid #5a5a5a;
+}
+@media only screen and (max-width: 720px) {
+	.mytbl table th.num,
+	.mytbl table td.num,
+	.pagination {
+		display: none;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.mytbl table th.date,
+	.mytbl table td.date {
+		display: none;
+	}
+}
+</style>
+<!-- http://www.kortek.co.kr/kor/company/news-notice.do -->
+</head>
+
+<body>
+<div class="mytbl">
+	<div class="maintitle">공지사항</div>
+	<form class="top" style='box-shadow:2px 3px 5px 0px #7a7a7a'>
+			<p><span>총게시물:</span>41 / 페이지 :1/5</p>
+		<div class="search">
+			<input type="text" class="title" placeholder="제목" id="search_area">
+			<input type="text" placeholder="검색어를 입력하세요" id="search_area">
+			<input type="image" src="images/ico_search.png" alt="검색">
+		</div>
+	</form>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col" class="num">순번</th>
+				<th scope="col" class="title">제목</th>
+				<th scope="col" class="team">부서명</th>
+				<th scope="col" class="date">등록일</th>
+				<th scope="col" class="check">조회</th>
+				<th scope="col" class="attach">첨부</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="num">41</td>
+				<td class="title">2023년 연구실 정기점검 및 정밀안전진단 결과 알림</td>
+				<td class="team">시설과</td>
+				<td class="date">2023-09-27</td>
+				<td class="check">2575</td>
+				<td class="attach"><a href="" class="download">icon</a></td>
+			</tr>
+			<tr>
+				<td class="num">40</td>
+				<td class="title">2022년 연구실 정기점검 결과 알림</td>
+				<td class="team">시설과</td>
+				<td class="date">2022-10-14</td>
+				<td class="check">995</td>
+				<td class="attach"><a href="" class="download">icon</a></td>
+			</tr>
+			<tr>
+				<td class="num">39</td>
+				<td class="title">대학조교 신규채용 공고</td>
+				<td class="team">제4행정실</td>
+				<td class="date">2022-03-07</td>
+				<td class="check">390</td>
+				<td class="attach"><a href="" class="photo">icon</a></td>
+			</tr>
+			<tr>
+				<td class="num">38</td>
+				<td class="title">대학 실험 실습실 사고통계 및 예방 가이드 배포(이첩)</td>
+				<td class="team">시설과</td>
+				<td class="date">2021-12-24</td>
+				<td class="check">91</td>
+				<td class="attach"><a href="" class="pdf">icon</a></td>
+			</tr>
+			<tr>
+				<td class="num">37</td>
+				<td class="title">[국가연구안전관리본부] 2021년 연구실 안전 교육 콘텐츠 공모 안내(~10/15)</td>
+				<td class="team">시설과</td>
+				<td class="date">2021-09-24</td>
+				<td class="check">1318</td>
+				<td class="attach"><a href="" class="download">icon</a></td>
+			</tr>
+			<tr>
+				<td class="num">36</td>
+				<td class="title">2021년 연구실 정기점검 및 정밀안전진단 결과 알림</td>
+				<td class="team">시설과</td>
+				<td class="date">2021-08-25</td>
+				<td class="check">870</td>
+				<td class="attach"><a href="" class="download">icon</a></td>
+			</tr>
+			<tr>
+				<td class="num">35</td>
+				<td class="title">연구실 사고사례 전파 및 안전관리 강화 협조 안내</td>
+				<td class="team">시설과</td>
+				<td class="date">2021-06-07</td>
+				<td class="check">1405</td>
+				<td class="attach"><a href="" class="download">icon</a></td>
+			</tr>
+			<tr>
+				<td class="num">34</td>
+				<td class="title">2021년 연구실 안전 콘텐츠 공모전 개최 알림</td>
+				<td class="team">시설과</td>
+				<td class="date">2021-04-21</td>
+				<td class="check">107</td>
+				<td class="attach"><a href="" class="img">icon</a></td>
+			</tr>
+			<tr>
+				<td class="num">33</td>
+				<td class="title">연구실 사고 사례 전파 및 설 연휴기간 연구실 안전관리 철저 요청</td>
+				<td class="team">시설과</td>
+				<td class="date">2021-02-09</td>
+				<td class="check">907</td>
+				<td class="attach"><a href="" class="download">icon</a></td>
+			</tr>
+			<tr>
+				<td class="num">32</td>
+				<td class="title">연구실 사고사례 전파 및 개인보호구 종류 및 사용방법 안내</td>
+				<td class="team">시설과</td>
+				<td class="date">2020-11-03</td>
+				<td class="check">104</td>
+				<td class="attach"><a href="" class="pdf">icon</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="pagination">
+		<ul>
+			<li><a href="">1</a></li>
+			<li><a href="">2</a></li>
+			<li><a href="">3</a></li>
+			<li><a href="">4</a></li>
+			<li><a href="">5</a></li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>
